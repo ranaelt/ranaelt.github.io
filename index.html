@@ -9,6 +9,8 @@
         <meta name="title" content="HPC Documentation">
         <meta name="viewport" content="width=device-width">
 
+        <script src="./raylib - cheatsheet_files/highlight.min.js.download"></script>
+
         <style type="text/css">
             @font-face {
                 font-family: 'grixel_acme_7_wide_xtnd';
@@ -34,19 +36,21 @@
          }
 
          .exdownbtn:hover{background-color:#f0d6d6; color:#c55757; border:4px solid #e66666;}
-         #core pre code{border:1px solid; border-color:#888888; background-color:#dbdbe1; }
-         #shapes pre code{border:10px solid; border-color:#e66666; background-color:#e9d0d6; }
-         #textures pre code{border:10px solid; border-color:#75a06d; background-color:#c3e4bf; }
-         #text pre code{border:10px solid; border-color:#52b296; background-color:#b9e9dd; }
-         #models pre code{border:10px solid; border-color:#5d9cbd; background-color:#b9d6e8; }
-         #audio pre code{border:10px solid; border-color:#d3b157; background-color:#e5d7ae; }
-         #structs pre code{border:10px solid; border-color:#d2c9c6; background-color:#f8f8ff;}
-         #colors pre code{border:10px solid; border-color:#c6d2c6; background-color:#e9f1f2;}
+         #core pre code{border:10px solid; border-color:#888888; background-color:#dbdbe1; }
+         #shapes pre code{border:1px solid; border-color:#e66666; background-color:#e9d0d6; }
+         #textures pre code{border:0px solid; border-color:#75a06d; background-color:#c3e4bf; }
+         #text pre code{border:1px solid; border-color:#52b296; background-color:#b9e9dd; }
+         #models pre code{border:1px solid; border-color:#5d9cbd; background-color:#b9d6e8; }
+         #audio pre code{border:1px solid; border-color:#d3b157; background-color:#e5d7ae; }
+         #structs pre code{border:1px solid; border-color:#d2c9c6; background-color:#f8f8ff;}
+         #colors pre code{border:1px solid; border-color:#c6d2c6; background-color:#e9f1f2;}
 
-         #logo{width:128px; height:128px; float:left; position:relative; background-image:url(../common/img/raylib_logo.png);}
+         .hljs{display:block;overflow-x:auto;padding:.5em;color:#000;background:#f8f8ff}.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#408080;font-style:italic}.hljs-keyword,.assignment,.hljs-literal,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.lisp .hljs-title,.hljs-subst{color:#954121}.hljs-number,.hljs-hexcolor{color:#40a070}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#219161}.hljs-title,.hljs-id{color:#19469d}.hljs-params{color:#00f}.javascript .hljs-title,.lisp .hljs-title,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.haskell .hljs-label,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.instancevar,.lisp .hljs-body{color:#008080}.hljs-regexp{color:#b68}.hljs-class{color:#458;font-weight:bold}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.ruby .hljs-symbol .hljs-keyword,.ruby .hljs-symbol .keymethods,.lisp .hljs-keyword,.tex .hljs-special,.input_number{color:#990073}.builtin,.constructor,.hljs-built_in,.lisp .hljs-title{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}.tex .hljs-formula{opacity:.5}
+
+         #logo{width:128px; height:128px; float:left; position:relative; background-image:url(logo.png);}
          #header{position:relative; height:110px; max-width: 1000px;}
          #title, #plinks, #version{position:relative; float:left; margin:0px; margin-left:10px; margin-top:10px;}
-         #plinks{color: gray;}
+         #plinks{color: rgb(47, 46, 46);}
          #plinks a, #copyright a{color: gray; text-decoration:none;}
          #plinks a:hover{color: black;}
          #version {margin-top: 23px; max-width:500px;}
@@ -83,7 +87,6 @@
             }
          }
             </style>
-             </script>
             </head>
 
             
@@ -91,35 +94,39 @@
         
     <body class="vsc-initialized" data-new-gr-c-s-check-loaded="14.1231.0" data-gr-ext-installed="">
         <div id="header">
-            <p id="title">SIGPROC Header Fields Functions</p>
+            <a href="https://gitlab.maastrichtuniversity.nl/project2-2-cs-hpc-2425/team07" target="_blank">
+           <img id="logo" src="logo.png" width="128" height="128"> </a>
+            <p id="title">HPC Group 7 Project Documentation ^_^ is a work in progress...</p>
         </div>
         <br>
         <div id="fulldata">
+            <p id="pcore"> SIGPROC Header Fields Creation Functions </p>
             <div id="core"><pre><code class="cpp hljs ">
-                <span class="hljs-keyword">void</span> CreateHeaderFieldTelescopeId(int value)              <span class="hljs-comment"> // creates header field *telescope_id*: 0=fake data; 1=Arecibo; 2=Ooty... others to be added</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldMachineId(int value)                <span class="hljs-comment"> // creates header field *machine_id*: 0=FAKE; 1=PSPM; 2=WAPP; 3=OOTY... others to be added</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldDataType(int value)                 <span class="hljs-comment"> // creates header field *data_type*: 1=filterbank; 2=time series... others to be added</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldRawDataFile(char [] value)          <span class="hljs-comment"> // creates header field *rawdatafile*: the name of the original data file</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldSourceName(char [] value)           <span class="hljs-comment"> // creates header field *source_name*: the name of the source being observed by the telescope</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldBaryCentric(int value)              <span class="hljs-comment"> // creates header field *barycentric*: equals 1 if data are barycentric or 0 otherwise</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldPulsarCentric(int value)            <span class="hljs-comment"> // creates header field *pulsarcentric*: equals 1 if data are pulsarcentric or 0 otherwise</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldAzStart(double value)               <span class="hljs-comment"> // creates header field *az_start*: telescope azimuth at start of scan (degrees)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldZaStart(double value)               <span class="hljs-comment"> // creates header field *za_start*: telescope zenith angle at start of scan (degrees)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldSrcRaj(double value)                <span class="hljs-comment"> // creates header field *src_raj*: right ascension (J2000) of source (hhmmss.s)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldSrcDej(double value)                <span class="hljs-comment"> // creates header field *src_dej*: declination (J2000) of source (ddmmss.s)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldTStart(double value)                <span class="hljs-comment"> // creates header field *tstart*: time stamp (MJD) of first sample</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldTSamp(double value)                 <span class="hljs-comment"> // creates header field *tsamp*: time interval between samples (s)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldNBits(int value)                    <span class="hljs-comment"> // creates header field *nbits*: number of bits per time sample</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldNSamples(int value)                 <span class="hljs-comment"> // creates header field *nsamples*: number of time samples in the data file (rarely used any more)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldFch1(double value)                  <span class="hljs-comment"> // creates header field *fch1*: centre frequency (MHz) of first filterbank channel</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldFoff(double value)                  <span class="hljs-comment"> // creates header field *foff*: filterbank channel bandwidth (MHz)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldFrequencyStart(character value)     <span class="hljs-comment"> // creates header field *frequency_start*: start of frequency table (see below for explanation)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldFChannel(double value)              <span class="hljs-comment"> // creates header field *fchannel*: frequency channel value (MHz)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldFrequencyEnd(character value)       <span class="hljs-comment"> // creates header field *frequency_end*: end of frequency table (see below for explanation)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldNChans(int value)                   <span class="hljs-comment"> // creates header field *nchans*: number of filterbank channels</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldNIfs(int value)                     <span class="hljs-comment"> // creates header field *nifs*: number of seperate IF channels</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldReFdm(double value)                 <span class="hljs-comment"> // creates header field *refdm*: reference dispersion measure (cm-3 pc)</span>
-                <span class="hljs-keyword">void</span> CreateHeaderFieldPeriod(double value)                <span class="hljs-comment"> // creates header field *period*: folding period (s)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldTelescopeId(int value)              <span class="hljs-comment"> // creates header field *telescope_id*: 0=fake data; 1=Arecibo; 2=Ooty... others to be added</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldMachineId(int value)                <span class="hljs-comment"> // creates header field *machine_id*: 0=FAKE; 1=PSPM; 2=WAPP; 3=OOTY... others to be added</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldDataType(int value)                 <span class="hljs-comment"> // creates header field *data_type*: 1=filterbank; 2=time series... others to be added</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldRawDataFile(char [] value)          <span class="hljs-comment"> // creates header field *rawdatafile*: the name of the original data file</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldSourceName(char [] value)           <span class="hljs-comment"> // creates header field *source_name*: the name of the source being observed by the telescope</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldBaryCentric(int value)              <span class="hljs-comment"> // creates header field *barycentric*: equals 1 if data are barycentric or 0 otherwise</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldPulsarCentric(int value)            <span class="hljs-comment"> // creates header field *pulsarcentric*: equals 1 if data are pulsarcentric or 0 otherwise</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldAzStart(double value)               <span class="hljs-comment"> // creates header field *az_start*: telescope azimuth at start of scan (degrees)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldZaStart(double value)               <span class="hljs-comment"> // creates header field *za_start*: telescope zenith angle at start of scan (degrees)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldSrcRaj(double value)                <span class="hljs-comment"> // creates header field *src_raj*: right ascension (J2000) of source (hhmmss.s)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldSrcDej(double value)                <span class="hljs-comment"> // creates header field *src_dej*: declination (J2000) of source (ddmmss.s)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldTStart(double value)                <span class="hljs-comment"> // creates header field *tstart*: time stamp (MJD) of first sample</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldTSamp(double value)                 <span class="hljs-comment"> // creates header field *tsamp*: time interval between samples (s)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldNBits(int value)                    <span class="hljs-comment"> // creates header field *nbits*: number of bits per time sample</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldNSamples(int value)                 <span class="hljs-comment"> // creates header field *nsamples*: number of time samples in the data file (rarely used any more)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldFch1(double value)                  <span class="hljs-comment"> // creates header field *fch1*: centre frequency (MHz) of first filterbank channel</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldFoff(double value)                  <span class="hljs-comment"> // creates header field *foff*: filterbank channel bandwidth (MHz)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldFrequencyStart(character value)     <span class="hljs-comment"> // creates header field *frequency_start*: start of frequency table (see below for explanation)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldFChannel(double value)              <span class="hljs-comment"> // creates header field *fchannel*: frequency channel value (MHz)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldFrequencyEnd(character value)       <span class="hljs-comment"> // creates header field *frequency_end*: end of frequency table (see below for explanation)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldNChans(int value)                   <span class="hljs-comment"> // creates header field *nchans*: number of filterbank channels</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldNIfs(int value)                     <span class="hljs-comment"> // creates header field *nifs*: number of seperate IF channels</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldReFdm(double value)                 <span class="hljs-comment"> // creates header field *refdm*: reference dispersion measure (cm-3 pc)</span>
+    <span class="hljs-keyword">void</span> CreateHeaderFieldPeriod(double value)                <span class="hljs-comment"> // creates header field *period*: folding period (s)</span>
 </code></pre></div>
                 </div>
                 <div class="rightgroup">
+                    
